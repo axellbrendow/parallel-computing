@@ -1,26 +1,34 @@
 /*
 Adaptado de: https://ideone.com/JU5CfV
-e https://github.com/stbrumme/eratosthenes
 
 ---
 
-//
+Speed de 1,6
 
-Medição do tempo usando clock
+Sequencial
 
-Erastothenes Sequencial: 5761455 / Tempo: 2.04s
-Erastothenes Paralelo: 5761455 / Tempo: 1.07s
+real    0m4.055s
+user    0m3.981s
+sys     0m0.068s
 
-Speed up: 1.9
+Paralelo static 100
 
----
+real    0m2.506s
+user    0m9.633s
+sys     0m0.080s
 
-Medição do tempo usando comando time
+Paralelo dynamic 100
 
-Erastothenes Sequencial: 1,95s user 0,03s system 99% cpu 1,977 total
-Erastothenes Paralelo: 1,53s user 0,00s system 514% cpu 0,299 total
+real    0m2.511s
+user    0m9.518s
+sys     0m0.092s
 
-Speed up: 1.2
+Paralelo guided 100
+
+real    0m2.564s
+user    0m9.820s
+sys     0m0.076s
+
 */
 
 #include <stdio.h>
@@ -42,7 +50,7 @@ int sieveOfEratosthenes(int n)
 
    memset(prime, true, (n + 1) * sizeof(bool));
 
-   #pragma omp parallel for schedule(dynamic,100)
+   #pragma omp parallel for schedule(static,100)
    for (int p = 2; p <= sqrt_n; p++)
    {
       // If prime[p] is not changed, then it is a prime
