@@ -13,9 +13,9 @@ sys     0m0.068s
 
 Paralelo static 100
 
-real    0m2.506s
-user    0m9.633s
-sys     0m0.080s
+real    0m2.934s
+user    0m9.502s
+sys     0m0.088s
 
 Paralelo dynamic 100
 
@@ -25,9 +25,9 @@ sys     0m0.092s
 
 Paralelo guided 100
 
-real    0m2.564s
-user    0m9.820s
-sys     0m0.076s
+real    0m3.670s
+user    0m7.022s
+sys     0m0.088s
 
 */
 
