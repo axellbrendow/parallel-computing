@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 /*
+SPEED UP: 1,958829102
+
 SEQUENTIAL PERF STATS:
 
  Performance counter stats for './silly_sort.exe':
