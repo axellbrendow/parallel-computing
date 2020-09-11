@@ -291,8 +291,10 @@ void compute_path(vector<Flight>& flights, string to, vector<Travel>& travels, u
             Travel newTravel = travel;
             newTravel.flights.push_back(flight);
             if(flight.to == to){
+              #pragma omp critical
               final_travels.push_back(newTravel);
             }else{
+              #pragma omp critical
               travels.push_back(newTravel);
             }
 	      }
