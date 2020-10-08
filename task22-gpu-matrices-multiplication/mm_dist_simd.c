@@ -24,7 +24,7 @@ sys     0m1.434s
 
 void mm(double* a, double* b, double* c, int width) 
 {
-#pragma omp target map(to:a[0:width*width], b[0:width*width]) map(tofrom:c[0:width*width])
+#pragma omp target map(to:a[0:width*width], b[0:width*width]) map(from:c[0:width*width])
 #pragma omp teams distribute parallel for simd
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < width; j++) {
@@ -57,10 +57,10 @@ int main()
 
   mm(a,b,c,width);
 
-  //  for(int i = 0; i < width; i++) {
-  //  for(int j = 0; j < width; j++) {
-  //    printf("\n c[%d][%d] = %f",i,j,c[i*width+j]);
-  //  }
-  // }
+  for(int i = 0; i < width; i++) {
+    for(int j = 0; j < width; j++) {
+      printf("%f\n",c[i*width+j]);
+    }
+  }
 
 }

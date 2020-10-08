@@ -14,11 +14,17 @@ real    1m29.670s
 user    1m14.390s
 sys     0m0.269s
 
+TEMPO PARALELO DISTRIBUTE PARALLEL FOR:
+
+real    2m58.611s
+user    0m38.440s
+sys     0m9.928s
+
 TEMPO PARALELO GPU SIMD:
 
-real    0m40.789s
-user    0m5.092s
-sys     0m1.434s
+real    0m22.656s
+user    0m5.845s
+sys     0m1.807s
 
 */
 
@@ -54,10 +60,10 @@ int main()
 
   mm(a,b,c,width);
 
-  //  for(int i = 0; i < width; i++) {
-  //  for(int j = 0; j < width; j++) {
-  //    printf("\n c[%d][%d] = %f",i,j,c[i*width+j]);
-  //  }
-  // }
+  for(int i = 0; i < width; i++) {
+    for(int j = 0; j < width; j++) {
+      printf("%f\n",c[i*width+j]);
+    }
+  }
 
 }
