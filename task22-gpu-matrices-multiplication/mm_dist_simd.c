@@ -14,18 +14,14 @@ real    1m29.670s
 user    1m14.390s
 sys     0m0.269s
 
-TEMPO PARALELO GPU SIMD:
-
-real    0m40.789s
-user    0m5.092s
-sys     0m1.434s
+TEMPO PARALELO GPU:
 
 */
 
 void mm(double* a, double* b, double* c, int width) 
 {
 #pragma omp target map(to:a[0:width*width], b[0:width*width]) map(tofrom:c[0:width*width])
-#pragma omp teams distribute
+#pragma omp teams distribute parallel for simd
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < width; j++) {
       double sum = 0;
