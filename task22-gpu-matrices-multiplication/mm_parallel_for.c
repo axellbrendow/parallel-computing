@@ -24,6 +24,7 @@ sys     0m1.434s
 
 void mm(double* a, double* b, double* c, int width) 
 {
+#pragma omp parallel for
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < width; j++) {
       double sum = 0;
@@ -44,6 +45,7 @@ int main()
   double *b = (double*) malloc (width * width * sizeof(double));
   double *c = (double*) malloc (width * width * sizeof(double));
 
+#pragma omp parallel for
   for(int i = 0; i < width; i++) {
     for(int j = 0; j < width; j++) {
       a[i*width+j] = i;

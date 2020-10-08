@@ -14,7 +14,11 @@ real    1m29.670s
 user    1m14.390s
 sys     0m0.269s
 
-TEMPO PARALELO GPU:
+TEMPO PARALELO GPU SIMD:
+
+real    0m40.789s
+user    0m5.092s
+sys     0m1.434s
 
 */
 
