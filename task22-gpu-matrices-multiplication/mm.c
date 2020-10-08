@@ -8,17 +8,22 @@ real    3m30.117s
 user    1m15.715s
 sys     0m0.127s
 
+
+
 TEMPO PARALELO MULTICORE:
 
 real    1m29.670s
 user    1m14.390s
 sys     0m0.269s
 
+
+
 TEMPO PARALELO DISTRIBUTE:
 
 real    3m5.985s
 user    2m25.092s
 sys     0m40.084s
+
 
 Invocations                                Event Name         Min         Max         Avg       Total
 Device "GeForce GT 1030 (0)"
@@ -31,11 +36,14 @@ Device "GeForce GT 1030 (0)"
     Kernel: mm$_omp_fn$0
           1                 warp_execution_efficiency                 Warp Execution Efficiency     100.00%     100.00%     100.00%
 
+
+
 TEMPO PARALELO DISTRIBUTE PARALLEL FOR:
 
 real    2m58.611s
 user    0m38.440s
 sys     0m9.928s
+
 
 Invocations                                Event Name         Min         Max         Avg       Total
 Device "GeForce GT 1030 (0)"
@@ -48,11 +56,14 @@ Device "GeForce GT 1030 (0)"
     Kernel: mm$_omp_fn$0
           1                 warp_execution_efficiency                 Warp Execution Efficiency     100.00%     100.00%     100.00%
 
+
+
 TEMPO PARALELO GPU SIMD:
 
 real    0m22.656s
 user    0m5.845s
 sys     0m1.807s
+
 
 Invocations                                Event Name         Min         Max         Avg       Total
 Device "GeForce GT 1030 (0)"
@@ -64,6 +75,8 @@ Invocations                               Metric Name                        Met
 Device "GeForce GT 1030 (0)"
     Kernel: mm$_omp_fn$0
           1                 warp_execution_efficiency                 Warp Execution Efficiency      86.81%      86.81%      86.81%
+
+
 
 */
 
