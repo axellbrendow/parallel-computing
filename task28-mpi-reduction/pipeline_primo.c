@@ -60,7 +60,7 @@ void removeMultipleOf5()
   for (int i = 2; i < size; i++)
   {
     // receber mensagem do terceiro estagio
-    MPI_Recv(&number, 1, MPI_INT, i, MPI_ANY_TAG, MPI_COMM_WORLD, &Status);
+    MPI_Recv(&number, 1, MPI_INT, i, END_MSG, MPI_COMM_WORLD, &Status);
     primeCountTotal += number;
   }
 
